@@ -1,0 +1,116 @@
+/* ======= ESTILO GERAL ======= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: #333;
+}
+
+/* ======= TÍTULO ======= */
+h1 {
+    font-size: 2.5em;
+    color: #222;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* ======= CONTAINER DOS INPUTS ======= */
+.entrada {
+    background: white;
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.entrada label {
+    font-weight: 600;
+    color: #444;
+}
+
+.entrada input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.entrada input:focus {
+    border-color: #6C63FF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108,99,255,0.3);
+}
+
+/* ======= CONTAINER DOS BOTÕES ======= */
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Para ajustar em telas menores */
+}
+
+/* ======= BOTÕES ======= */
+button {
+    position: relative;
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(108,99,255,0.2);
+}
+
+button:hover {
+    background-color: #5848d6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(108,99,255,0.3);
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: none;
+}
+
+/* ======= EFEITO DE SÍMBOLO AO PASSAR O MOUSE ======= */
+button::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    font-size: 1.5em;
+    color: #222;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+button:nth-of-type(1)::before {
+    content: "+";
+}
+button:nth-of-type(2)::before {
+    content: "−";
+}
+button:nth-of-type(3)::before {
+    content: "÷";
+}
+button:nth-of-type(4)::before {
+    content: "×";
+}
+
+button:hover::before {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
